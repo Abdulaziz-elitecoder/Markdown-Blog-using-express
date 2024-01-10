@@ -7,7 +7,9 @@ const articleRouter = require('./routes/articles');
 
 app.set('view engine', 'ejs');
 
+app.use(express.urlencoded({ extended: false }));
 app.use('/articles', articleRouter);
+
 
 app.get('/', (req, res) => {
     const articles = [{
